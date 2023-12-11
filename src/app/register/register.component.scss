@@ -1,0 +1,48 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  
+    mat-card {
+      width: 400px;
+  
+      mat-card-title {
+        text-align: center;
+      }
+  
+      mat-card-content {
+        form {
+          display: flex;
+          flex-direction: column;
+  
+          mat-form-field {
+            margin-bottom: 16px;
+            width: 100%;
+  
+            mat-label {
+              color: #2196F3;
+            }
+  
+            mat-error {
+              color: #FF0000;
+            }
+  
+            button {
+              background-color: transparent;
+            }
+          }
+  
+          button[type="submit"] {
+            align-self: center;
+            margin-top: 16px;
+          }
+          .error-snackbar {
+            background-color: red;
+            color: white;
+          }
+        }
+      }
+    }
+  }
+  
