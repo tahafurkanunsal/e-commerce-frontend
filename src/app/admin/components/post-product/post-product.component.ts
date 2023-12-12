@@ -57,16 +57,16 @@ export class PostProductComponent {
   addProduct(): void {
     if(this.productForm.valid){
       const formData : FormData = new FormData();
-      formData.append('img', this.selectedFile);
+      formData.append('image', this.selectedFile);
       formData.append('categoryId' , this.productForm.get('categoryId').value);
       formData.append('name' , this.productForm.get('name').value);
       formData.append('description' , this.productForm.get('description').value);
       formData.append('price' , this.productForm.get('price').value);
 
-      this.adminService.addCategory(formData).subscribe((res) => {
+      this.adminService.addProduct(formData).subscribe((res) => {
         if(res.id != null){
           this.snackbar.open('Product Posted Successfully!' , 'Close', {duration: 5000});
-          this.router.navigateByUrl('/admin/dasboard');
+          this.router.navigateByUrl('/admin/dashboard');
         }else{
           this.snackbar.open(res.message , 'ERROR', {duration: 5000});
         }

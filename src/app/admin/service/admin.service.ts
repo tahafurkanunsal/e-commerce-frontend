@@ -29,6 +29,12 @@ export class AdminService {
     { headers: this.createAuthorizationHeader(),
     })
   }
+
+  getAllProducts(): Observable<any>{
+    return this.http.get(BASIC_URL + 'api/admin/products' ,{
+      headers: this.createAuthorizationHeader(),
+    } )
+  }
   
 
   private createAuthorizationHeader(): HttpHeaders{
